@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NFT Marketplace</title>
+    <link rel="stylesheet" href="mystyle.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* Style all input fields */
+
+
+        /* Style the container for inputs */
+        .container {
+            background-color: #f1f1f1;
+            padding: 20px;
+        }
+
+        /* The message box is shown when the user clicks on the password field */
+        #message {
+            display: none;
+            background: #f1f1f1;
+            color: #000;
+            position: relative;
+            padding: 20px;
+            margin-top: 10px;
+        }
+
+        #message p {
+            padding: 10px 35px;
+            font-size: 18px;
+        }
+
+        /* Add a green text color and a checkmark when the requirements are right */
+        .valid {
+            color: green;
+        }
+
+        .valid:before {
+            position: relative;
+            left: -35px;
+            content: "✔";
+        }
+
+        /* Add a red text color and an "x" when the requirements are wrong */
+        .invalid {
+            color: red;
+        }
+
+        .invalid:before {
+            position: relative;
+            left: -35px;
+            content: "✖";
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navdiv">
+                <div class="logo">
+                    <a href="index.html"><img src="./images/logo.png" alt="" /></a>
+                </div>
+                <ul>
+                    <li><a href="marketplace.html">Marketplace</a></li>
+                    <li><a href="#">
+                            <div class="dropdown">
+                                <button class="dropbtn">Rankings
+                                    <i class="fa fa-caret-down"></i>
+                                </button>
+                                <div class="dropdown-content">
+                                    <a href="top10.html">Top 10</a>
+                                    <a href="#">Top 100</a>
+                                    <a href="#">All Time Top</a>
+                                </div>
+                            </div>
+                        </a></li>
+                    <li><a href="wallet.html">Connect a wallet</a></li>
+                    <button>
+                        <a href="signup.html"><img src="./images/User.png" alt="" />Sign Up</a>
+                    </button>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="main_head">
+            <div class="main_head_left">
+                <h1>
+                    Create account
+                </h1>
+                <p>
+                    Welcome! enter your details and start<br> creating, collecting and selling NFTs.
+                </p>
+                <div class="signupFrm">
+                    <form action="" class="form">
+                        <div class="inputContainer">
+                            <input type="text" class="input" placeholder="Username">
+                        </div>
+                        <div class="inputContainer">
+                            <input type="mail" class="input" placeholder="Email Address">
+                        </div>
+
+                        <div class="inputContainer">
+                            <input type="password" class="input" id="psw" name="password" placeholder="Password">
+                        </div>
+
+                        <div class="inputContainer">
+                            <input type="password" class="input" id="psw" name="password"
+                                placeholder="Confirm Password">
+                            <span id="passwordError" class="error"></span>
+                        </div>
+                        <div class="submit">
+                            <input type="submit" class="submitBtn" value="Create account">
+                        </div>
+                    </form>
+                    <div id="message">
+                        <h3>Password must contain the following:</h3>
+                        <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+                        <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                        <p id="number" class="invalid">A <b>number</b></p>
+                        <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+                    </div>
+                </div>
+            </div>
+            <div class="main_head_right">
+                <img src="./images/Image Placeholder (1).png" alt="">
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="about_company">
+            <h2>NFT Marketplace</h2>
+            <p class="made_by">NFT marketplace UI created<br> with Goga for Figma.</p>
+            <div class="social">
+                <p class="links">Join our community</p>
+                <ul>
+                    <li><img src="./images/DiscordLogo.png" alt=""></li>
+                    <li><img src="./images/TwitterLogo.png" alt=""></li>
+                    <li><img src="./images/InstagramLogo.png" alt=""></li>
+                    <li><img src="./images/YoutubeLogo.png" alt=""></li>
+                </ul>
+            </div>
+        </div>
+        <div class="explore">
+            <h2>Explore</h2>
+            <a href="#">
+                <p>Marketplace</p>
+            </a>
+            <a href="#">
+                <p>Rankings</p>
+            </a>
+            <a href="#">
+                <p>Connect a wallet</p>
+            </a>
+        </div>
+        <div class="join">
+            <h2>Join our weekly digest</h2>
+            <p>Get exclusive promotions & updates<br> straight to your inbox.</p>
+            <form role="subscribe" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
+                <label>
+                    <input type="subscribe" class="subscribe" placeholder="Enter your email here" value="" name="s"
+                        title="Search for:" />
+                </label>
+                <input type="submit" class="Subscribe-submit" value="Subscribe" />
+            </form>
+        </div>
+    </footer>
+    <div class="creator">
+        <p>Ⓒ NFT Market. Made by GoGa.</p>
+    </div>
+    <script>
+        var myInput = document.getElementById("psw");
+        var letter = document.getElementById("letter");
+        var capital = document.getElementById("capital");
+        var number = document.getElementById("number");
+        var length = document.getElementById("length");
+
+        // When the user clicks on the password field, show the message box
+        myInput.onfocus = function () {
+            document.getElementById("message").style.display = "block";
+        }
+
+        // When the user clicks outside of the password field, hide the message box
+        myInput.onblur = function () {
+            document.getElementById("message").style.display = "none";
+        }
+
+        // When the user starts to type something inside the password field
+        myInput.onkeyup = function () {
+            // Validate lowercase letters
+            var lowerCaseLetters = /[a-z]/g;
+            if (myInput.value.match(lowerCaseLetters)) {
+                letter.classList.remove("invalid");
+                letter.classList.add("valid");
+            } else {
+                letter.classList.remove("valid");
+                letter.classList.add("invalid");
+            }
+
+            // Validate capital letters
+            var upperCaseLetters = /[A-Z]/g;
+            if (myInput.value.match(upperCaseLetters)) {
+                capital.classList.remove("invalid");
+                capital.classList.add("valid");
+            } else {
+                capital.classList.remove("valid");
+                capital.classList.add("invalid");
+            }
+
+            // Validate numbers
+            var numbers = /[0-9]/g;
+            if (myInput.value.match(numbers)) {
+                number.classList.remove("invalid");
+                number.classList.add("valid");
+            } else {
+                number.classList.remove("valid");
+                number.classList.add("invalid");
+            }
+
+            // Validate length
+            if (myInput.value.length >= 8) {
+                length.classList.remove("invalid");
+                length.classList.add("valid");
+            } else {
+                length.classList.remove("valid");
+                length.classList.add("invalid");
+            }
+        }
+    </script>
+</body>
+
+</html>
