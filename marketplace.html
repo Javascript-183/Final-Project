@@ -5,8 +5,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NFT Marketplace</title>
-    <link rel="stylesheet" href="mystyle.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/slider.css" />
+    <link rel="stylesheet" href="styles/mystyle.css" />
+    <link rel="stylesheet" href="styles/burger_menu.css" />
+
+    <link rel="stylesheet" href="styles/search.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -16,25 +22,22 @@
                 <div class="logo">
                     <a href="index.html"><img src="./images/logo.png" alt="" /></a>
                 </div>
-                <ul>
-                    <li><a href="marketplace.html">Marketplace</a></li>
-                    <li><a href="#">
-                            <div class="dropdown">
-                                <button class="dropbtn">Rankings
-                                    <i class="fa fa-caret-down"></i>
-                                </button>
-                                <div class="dropdown-content">
-                                    <a href="top10.html">Top 10</a>
-                                    <a href="#">Top 100</a>
-                                    <a href="#">All Time Top</a>
-                                </div>
-                            </div>
-                        </a></li>
-                    <li><a href="wallet.html">Connect a wallet</a></li>
-                    <button>
-                        <a href="signup.html"><img src="./images/User.png" alt="" />Sign Up</a>
-                    </button>
-                </ul>
+                <div id="burger-menu">
+                    <span></span>
+                </div>
+                <div id="menu">
+                    <ul>
+                        <li><a href="marketplace.html">Marketplace</a></li>
+                        <li><a href="#">Rankings</a></li>
+                        <li><a href="wallet.html">Connect a wallet</a></li>
+                        <button>
+                            <a href="signup.html"><img src="images/User.png" alt="" />Sign Up</a>
+                        </button>
+                        <button>
+                            <a href="login.html"><img src="images/User.png" alt="" />Log In</a>
+                        </button>
+                    </ul>
+                </div>
             </div>
         </nav>
     </header>
@@ -46,15 +49,15 @@
             <p>
                 Browse through more than 50k NFTs on the NFT Marketplace.
             </p>
-            <input type="search" id="search" placeholder="Search your favourite NFTs">
+            <input type="text" id="myInput" onkeyup="liveSearch()" placeholder="Search your favourite NFTs">
         </div>
         <div class="nft-list">
             <div class="card">
-                <div class="card-image"><img src="./images/Image Placeholder (3).png" alt=""></div>
-                <div class="main-content">
+                <div class="card-image"><img src="./images/Image Placeholder (3).png" alt="Mushroom"></div>
+                <div id="main-content">
                     <h4>Magic Mushroom 0325</h4>
                     <div class="card-attribute">
-                        <img src="./images/Avatar (2).png" alt="avatar" class="small-avatar" />
+                        <img src="./images/Avatar (2).png" class="small-avatar" alt="Mushroom" />
                         <p>Shroomie</p>
                     </div>
                     <div class="prices">
@@ -68,11 +71,11 @@
                 </div>
             </div>
             <div class="card">
-                <div class="card-image"><img src="./images/Image Placeholder (4).png" alt=""></div>
-                <div class="main-content">
+                <div class="card-image"><img src="./images/Image Placeholder (4).png" alt="Robot"></div>
+                <div id="main-content">
                     <h4>Happy Robot 032</h4>
-                    <div class="card-attribute">
-                        <img src="./images/Asset 12 2 (2).png" alt="avatar" class="small-avatar" />
+                    <div class="card-attribute Robot">
+                        <img src="./images/Asset 12 2 (2).png" alt="Robot" class="small-avatar" />
                         <p>Shroomie</p>
                     </div>
                     <div class="prices">
@@ -86,11 +89,11 @@
                 </div>
             </div>
             <div class="card">
-                <div class="card-image"><img src="./images/Image Placeholder (5).png" alt=""></div>
-                <div class="main-content">
+                <div class="card-image"><img src="./images/Image Placeholder (5).png" alt="Robot"></div>
+                <div id="main-content">
                     <h4>Happy Robot 024</h4>
-                    <div class="card-attribute">
-                        <img src="./images/Avatar (3).png" alt="avatar" class="small-avatar" />
+                    <div class="card-attribute Robot">
+                        <img src="./images/Avatar (3).png" alt="Robot" class="small-avatar" />
                         <p>Shroomie</p>
                     </div>
                     <div class="prices">
@@ -107,11 +110,11 @@
         </div>
         <div class="nft-list">
             <div class="card">
-                <div class="card-image"><img src="./images/Image Placeholder (6).png" alt=""></div>
-                <div class="main-content">
+                <div class="card-image"><img src="./images/Image Placeholder (6).png" alt="Bear"></div>
+                <div id="main-content">
                     <h4>Designer Bear</h4>
-                    <div class="card-attribute">
-                        <img src="./images/Asset 12 2 (2).png" alt="avatar" class="small-avatar" />
+                    <div class="card-attribute Bear">
+                        <img src="./images/Asset 12 2 (2).png" alt="Bear" class="small-avatar" />
                         <p>Shroomie</p>
                     </div>
                     <div class="prices">
@@ -125,11 +128,11 @@
                 </div>
             </div>
             <div class="card">
-                <div class="card-image"><img src="./images/Image Placeholder (7).png" alt=""></div>
-                <div class="main-content">
+                <div class="card-image"><img src="./images/Image Placeholder (7).png" alt="Dog"></div>
+                <div id="main-content">
                     <h4>Colorful Dog 0356</h4>
-                    <div class="card-attribute">
-                        <img src="./images/Avatar (3).png" alt="avatar" class="small-avatar" />
+                    <div class="card-attribute Dog">
+                        <img src="./images/Avatar (3).png" alt="Dog" class="small-avatar" />
                         <p>Shroomie</p>
                     </div>
                     <div class="prices">
@@ -143,11 +146,11 @@
                 </div>
             </div>
             <div class="card">
-                <div class="card-image"><img src="./images/Image Placeholder (8).png" alt=""></div>
-                <div class="main-content">
+                <div class="card-image"><img src="./images/Image Placeholder (8).png" alt="Robot"></div>
+                <div id="main-content">
                     <h4>Dancing Robot 0312</h4>
-                    <div class="card-attribute">
-                        <img src="./images/Asset 12 2.png" alt="avatar" class="small-avatar" />
+                    <div class="card-attribute Robot">
+                        <img src="./images/Asset 12 2.png" alt="Robot" class="small-avatar" />
                         <p>Shroomie</p>
                     </div>
                     <div class="prices">
@@ -164,12 +167,13 @@
         </div>
         <div class="nft-list">
             <div class="card">
-                <div class="card-image"><img src="./images/Image Placeholder (9).png" alt=""></div>
-                <div class="main-content">
+                <div class="card-image"><img src="./images/Image Placeholder (9).png" alt="Mushroom"></div>
+                <div id="main-content">
                     <h4>Magic Mushroom 0325</h4>
-                    <div class="card-attribute">
-                        <img src="./images/Avatar (2).png" alt="avatar" class="small-avatar" />
+                    <div class="card-attribute Mushroom">
+                        <img src="./images/Avatar (2).png" alt="Mushroom" class="small-avatar" />
                         <p>Shroomie</p>
+                        Magic Mushroom 0325
                     </div>
                     <div class="prices">
                         <p>Price</p>
@@ -182,11 +186,11 @@
                 </div>
             </div>
             <div class="card">
-                <div class="card-image"><img src="./images/Image Placeholder (10).png" alt=""></div>
-                <div class="main-content">
+                <div class="card-image"><img src="./images/Image Placeholder (10).png" alt="Mushroom"></div>
+                <div id="main-content">
                     <h4>Magic Mushroom 0325</h4>
-                    <div class="card-attribute">
-                        <img src="./images/Avatar (2).png" alt="avatar" class="small-avatar" />
+                    <div class="card-attribute Mushroom">
+                        <img src="./images/Avatar (2).png" alt="Mushroom" class="small-avatar" />
                         <p>Shroomie</p>
                     </div>
                     <div class="prices">
@@ -199,12 +203,12 @@
                     </div>
                 </div>
             </div>
-            <div class="card">
-                <div class="card-image"><img src="./images/Image.png" alt=""></div>
-                <div class="main-content">
+            <div class="card" id="card">
+                <div class="card-image" id="card-image"><img src="./images/Image.png" alt="Mushroom"></div>
+                <div id="main-content">
                     <h4>Magic Mushroom 0325</h4>
-                    <div class="card-attribute">
-                        <img src="./images/Asset 12 2.png" alt="avatar" class="small-avatar" />
+                    <div class="card-attribute Mushroom">
+                        <img src="./images/Asset 12 2.png" alt="Mushroom" class="small-avatar" />
                         <p>Shroomie</p>
                     </div>
                     <div class="prices">
@@ -262,6 +266,12 @@
     <div class="creator">
         <p>Ⓒ NFT Market. Made by GoGa.</p>
     </div>
+    <script src="./script/slider.js" type="text/javascript"></script>
+    <script src="./script/main.js" type="text/javascript"></script>
+    <script src="./script/burgerMenu.js" type="text/javascript"></script>
+    <script src="./script/search.js" type="text/javascript"></script>
+    <script src="./script/filter.js" type="text/javascript"></script>
+
 </body>
 
 </html>

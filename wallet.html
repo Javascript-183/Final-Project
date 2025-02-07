@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NFT Marketplace</title>
-    <link rel="stylesheet" href="mystyle.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/slider.css" />
+    <link rel="stylesheet" href="styles/mystyle.css" />
+    <link rel="stylesheet" href="styles/burger_menu.css" />
+
+    <link rel="stylesheet" href="styles/search.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -16,25 +23,22 @@
                 <div class="logo">
                     <a href="index.html"><img src="./images/logo.png" alt="" /></a>
                 </div>
-                <ul>
-                    <li><a href="marketplace.html">Marketplace</a></li>
-                    <li><a href="#">
-                            <div class="dropdown">
-                                <button class="dropbtn">Rankings
-                                    <i class="fa fa-caret-down"></i>
-                                </button>
-                                <div class="dropdown-content">
-                                    <a href="top10.html">Top 10</a>
-                                    <a href="#">Top 100</a>
-                                    <a href="#">All Time Top</a>
-                                </div>
-                            </div>
-                        </a></li>
-                    <li><a href="wallet.html">Connect a wallet</a></li>
-                    <button>
-                        <a href="signup.html"><img src="./images/User.png" alt="" />Sign Up</a>
-                    </button>
-                </ul>
+                <div id="burger-menu">
+                    <span></span>
+                </div>
+                <div id="menu">
+                    <ul>
+                        <li><a href="marketplace.html">Marketplace</a></li>
+                        <li><a href="#">Rankings</a></li>
+                        <li><a href="wallet.html">Connect a wallet</a></li>
+                        <button>
+                            <a href="signup.html"><img src="images/User.png" alt="" />Sign Up</a>
+                        </button>
+                        <button>
+                            <a href="login.html"><img src="images/User.png" alt="" />Log In</a>
+                        </button>
+                    </ul>
+                </div>
             </div>
         </nav>
     </header>
@@ -44,6 +48,8 @@
                 <h1>
                     Connect wallet
                 </h1>
+                <div id="output"> </div>
+                <button onclick="fetchData()"> Fetch API to get data </button>
                 <p>
                     Choose a wallet you want to connect.<br> There are several wallet providers.
                 </p>
@@ -78,6 +84,7 @@
                     <li><img src="./images/InstagramLogo.png" alt=""></li>
                     <li><img src="./images/YoutubeLogo.png" alt=""></li>
                 </ul>
+                <ul id="myList"></ul>
             </div>
         </div>
         <div class="explore">
@@ -107,6 +114,12 @@
     <div class="creator">
         <p>Ⓒ NFT Market. Made by GoGa.</p>
     </div>
+    <script src="./script/slider.js" type="text/javascript"></script>
+    <script src="./script/main.js" type="text/javascript"></script>
+    <script src="./script/burgerMenu.js" type="text/javascript"></script>
+    <script src="./script/search.js" type="text/javascript"></script>
+    <script src="./script/readMore.js" type="text/javascript"></script>
+    <script src="./script/jsApi.js" type="text/javascript"></script>
 </body>
 
 </html>

@@ -5,8 +5,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NFT Marketplace</title>
-    <link rel="stylesheet" href="mystyle.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/slider.css" />
+    <link rel="stylesheet" href="styles/mystyle.css" />
+    <link rel="stylesheet" href="styles/burger_menu.css" />
+
+    <link rel="stylesheet" href="styles/search.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -16,29 +22,47 @@
                 <div class="logo">
                     <a href="index.html"><img src="./images/logo.png" alt="" /></a>
                 </div>
-                <ul>
-                    <li><a href="marketplace.html">Marketplace</a></li>
-                    <li><a href="#">
-                            <div class="dropdown">
-                                <button class="dropbtn">Rankings
-                                    <i class="fa fa-caret-down"></i>
-                                </button>
-                                <div class="dropdown-content">
-                                    <a href="top10.html">Top 10</a>
-                                    <a href="#">Top 100</a>
-                                    <a href="#">All Time Top</a>
-                                </div>
-                            </div>
-                        </a></li>
-                    <li><a href="wallet.html">Connect a wallet</a></li>
-                    <button>
-                        <a href="signup.html"><img src="./images/User.png" alt="" />Sign Up</a>
-                    </button>
-                </ul>
+                <div id="burger-menu">
+                    <span></span>
+                </div>
+                <div id="menu">
+                    <ul>
+                        <li><a href="marketplace.html">Marketplace</a></li>
+                        <li><a href="#">Rankings</a></li>
+                        <li><a href="wallet.html">Connect a wallet</a></li>
+                        <button>
+                            <a href="signup.html"><img src="images/User.png" alt="" />Sign Up</a>
+                        </button>
+                        <button>
+                            <a href="login.html"><img src="images/User.png" alt="" />Log In</a>
+                        </button>
+                    </ul>
+                </div>
             </div>
         </nav>
     </header>
     <main>
+        <div class="slider">
+            <div class="slide">
+                <img src="images/nft-cover.jpg" alt="Photo1" />
+            </div>
+            <div class="slide">
+                <img src="images/nft.jpeg" alt="Photo3" />
+            </div>
+            <div class="slide">
+                <img src="images/NFT_Card.png" alt="Photo2" />
+            </div>
+
+
+            <button class="btn-slide prev"><i class="fad fa-chevron-circle-left"></i></button>
+            <button class="btn-slide next"><i class="fad fa-chevron-circle-right"></i></i></button>
+
+        </div>
+        <div class="dots-container">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+        </div>
         <div class="main_head">
             <div class="main_head_left">
                 <h1>
@@ -49,11 +73,13 @@
                 <p>
                     NFT marketplace UI created with Anima for<br />
                     Figma. Collect, buy and sell art from more<br />
-                    than 20k NFT artists.
+                    than 20k NFT artists.<span id="dots">...</span><span id="moreTx">
+                        NFT marketplace UI created with Anima for<br />
+                        Figma. Collect, buy and sell art from more<br />
+                        than 20k NFT artists.</span></p>
+                <button onclick="myFunction()" id="moreBtn">Read more</button>
                 </p>
-                <button>
-                    <a href="#"><img src="./images/RocketLaunch.png" alt="" />Get Started</a>
-                </button>
+
                 <div class="stats">
                     <div class="stat1">
                         <p>240k+</p>
@@ -70,8 +96,8 @@
                 </div>
             </div>
             <div class="main_head_right">
-                <div class="slide-wrapper">
-                    <div class="slide">
+                <div>
+                    <div class="midimage">
                         <img src="./images/Image Placeholder.png" alt="" />
                         <h2>Space Walking</h2>
                         <div class="avatar">
@@ -79,16 +105,9 @@
                             <p>Animakid</p>
                         </div>
                     </div>
-                    <div class="slide">
-                        <img src="./images/Image Placeholder (1).png" alt="" />
-                        <h2>Space Walking</h2>
-                        <div class="avatar">
-                            <img src="./images/Avatar (1).png" alt="" />
-                            <p>Animakid</p>
-                        </div>
-                    </div>
                 </div>
             </div>
+        </div>
         </div>
         <div class="creators">
             <h2>Top creators</h2>
@@ -221,6 +240,11 @@
     <div class="creator">
         <p>Ⓒ NFT Market. Made by GoGa.</p>
     </div>
+    <script src="./script/slider.js" type="text/javascript"></script>
+    <script src="./script/main.js" type="text/javascript"></script>
+    <script src="./script/burgerMenu.js" type="text/javascript"></script>
+    <script src="./script/search.js" type="text/javascript"></script>
+    <script src="./script/readMore.js" type="text/javascript"></script>
 </body>
 
 </html>
